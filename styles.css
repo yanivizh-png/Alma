@@ -1,0 +1,138 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f7ff;
+  --card: #ffffff;
+  --text: #1f2a44;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --success: #047857;
+  --error: #b91c1c;
+  --border: #dbe1ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(180deg, #eef2ff, var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+header {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 5vw, 2.2rem);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.08);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 0.72rem;
+  border-radius: 10px;
+  border: 1px solid #cfd6ff;
+  font-size: 1rem;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+button.secondary {
+  background: #64748b;
+}
+
+button.secondary:hover {
+  background: #475569;
+}
+
+button.danger {
+  background: #dc2626;
+}
+
+button.danger:hover {
+  background: #b91c1c;
+}
+
+#answerForm {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.feedback {
+  min-height: 1.5rem;
+  margin-top: 0.7rem;
+  font-size: 1.03rem;
+  font-weight: 600;
+}
+
+.feedback.success {
+  color: var(--success);
+}
+
+.feedback.error {
+  color: var(--error);
+}
+
+.stats ul {
+  margin: 0;
+  padding-inline-start: 1rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (min-width: 560px) {
+  #answerForm {
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+  }
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>כפליקציה - לימוד לוח הכפל</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>כפליקציה</h1>
+        <p>לומדים לוח כפל בצורה כיפית 🎯</p>
+      </header>
+
+      <section class="controls card">
+        <label for="mode">מצב לימוד:</label>
+        <select id="mode" aria-label="מצב לימוד">
+          <option value="mixed">מעורב (1 עד 10)</option>
+          <option value="focus">תרגול מספר מסוים</option>
+        </select>
+
+        <label for="focusNumber">מספר לתרגול:</label>
+        <input id="focusNumber" type="number" min="1" max="12" value="6" />
+
+        <label for="maxNumber">עד איזה מספר להכפיל:</label>
+        <input id="maxNumber" type="number" min="5" max="20" value="10" />
+      </section>
+
+      <section class="question card">
+        <h2 id="questionText" aria-live="polite">לחצו על "שאלה חדשה" כדי להתחיל</h2>
+
+        <form id="answerForm">
+          <label for="answerInput" class="visually-hidden">התשובה שלך</label>
+          <input
+            id="answerInput"
+            type="number"
+            inputmode="numeric"
+            placeholder="הכניסו תשובה"
+            autocomplete="off"
+            required
+          />
+          <button type="submit">בדיקה</button>
+          <button type="button" id="newQuestionBtn" class="secondary">שאלה חדשה</button>
+        </form>
+
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+      </section>
+
+      <section class="stats card">
+        <h3>התקדמות</h3>
+        <ul>
+          <li>נכונות: <strong id="correctCount">0</strong></li>
+          <li>שגויות: <strong id="wrongCount">0</strong></li>
+          <li>אחוז הצלחה: <strong id="accuracy">0%</strong></li>
+          <li>רצף נוכחי: <strong id="streak">0</strong></li>
+          <li>רצף שיא: <strong id="bestStreak">0</strong></li>
+        </ul>
+        <button id="resetBtn" type="button" class="danger">איפוס סטטיסטיקה</button>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
